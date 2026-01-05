@@ -20,20 +20,63 @@ Why they work:
 - **Reduces anxiety** - Focus on input, not output
 - **Fast feedback** - Know daily if you're on track
 
+---
+
 ## Installation
+
+### Option A: Claude Code (Recommended)
+
+If you have [Claude Code](https://claude.ai/code) installed, run this in your terminal:
 
 ```bash
 git clone https://github.com/BayramAnnakov/2026-coach ~/.claude/skills/2026-coach
 ```
 
-## Usage
-
-In Claude Code:
+Then use the skill:
 ```
 /2026-coach
 ```
 
-The skill also works in Claude.ai and other Agent Skills-compatible assistants.
+### Option B: Claude Desktop / Claude.ai (No Installation Needed)
+
+**You don't need to install anything!** Just copy-paste this prompt into Claude:
+
+```
+Please act as my executive coach and help me plan my 2026 using the process goals methodology.
+
+Research shows process goals are 15x more effective than outcome goals (Williamson et al. 2022):
+- Outcome goal: "Make $100K" (you don't control this)
+- Process goal: "Send 20 messages daily" (you control this 100%)
+
+Please guide me through:
+1. Discovery - Ask me about my current situation, vision for 2026, what worked/didn't in 2025
+2. Create one clear outcome goal (my north star)
+3. Break it into quarterly milestones
+4. Convert to weekly process goals (behaviors I control)
+5. Create daily checklists
+
+At the end, create these files for me:
+- 2026_PLAN.md - my annual plan
+- COACHING_CONTEXT.md - context for future coaching sessions
+- WEEK_01.md - first week's process goals with checkboxes
+```
+
+### Option C: Manual Download (Any Platform)
+
+1. Go to https://github.com/BayramAnnakov/2026-coach
+2. Click the green **"Code"** button
+3. Click **"Download ZIP"**
+4. Unzip the folder
+5. Move the `2026-coach` folder to `~/.claude/skills/` (create this folder if it doesn't exist)
+
+**Where is ~/.claude/skills/?**
+- **Mac:** `/Users/YOUR_USERNAME/.claude/skills/`
+- **Windows:** `C:\Users\YOUR_USERNAME\.claude\skills\`
+- **Linux:** `/home/YOUR_USERNAME/.claude/skills/`
+
+Note: The `.claude` folder may be hidden. On Mac, press `Cmd+Shift+.` in Finder to show hidden folders.
+
+---
 
 ## What It Does
 
@@ -67,18 +110,25 @@ Transforms outcomes into controllable behaviors:
 - `COACHING_CONTEXT.md` - Context for ongoing AI coaching sessions
 - `WEEK_XX.md` - Weekly process goals with daily checklists
 
+---
+
 ## Environment Compatibility
 
-| Environment | Behavior |
-|-------------|----------|
-| Claude Code | Uses `AskUserQuestion` for interactive multi-choice discovery |
-| Claude.ai | Falls back to conversational questions |
-| Other agents | Works with any Agent Skills-compatible assistant |
+| Environment | How to Use |
+|-------------|------------|
+| **Claude Code** | Run `/2026-coach` after installation |
+| **Claude Desktop** | Use the prompt from Option B above |
+| **Claude.ai (web)** | Use the prompt from Option B above |
+| **Other AI assistants** | Copy SKILL.md contents as a system prompt |
+
+---
 
 ## Companion Skills
 
 For tracking your process goals:
 - [ActivityWatch Analysis Skill](https://github.com/BayramAnnakov/activitywatch-analysis-skill) - Track focus time, app switching, deep work sessions
+
+---
 
 ## File Structure
 
@@ -92,15 +142,23 @@ For tracking your process goals:
     └── coaching-context-template.md      # AI coaching context template
 ```
 
-## Validation
+---
 
-This skill passes the [Agent Skills specification](https://agentskills.io/specification):
+## FAQ
 
-```bash
-npm install -g skills-ref
-skills-ref validate ~/.claude/skills/2026-coach
-# Valid skill: /Users/.../.claude/skills/2026-coach
-```
+**Q: Do I need to know how to code?**
+A: No! Use Option B (just copy-paste the prompt) or Option C (download ZIP).
+
+**Q: Does this work with ChatGPT?**
+A: Yes! Copy the prompt from Option B into ChatGPT. It works with any AI assistant.
+
+**Q: What if I don't have Claude Code?**
+A: Use Option B - no installation needed, just paste the prompt into claude.ai.
+
+**Q: Where do my plan files get saved?**
+A: The AI will create them wherever you specify, or show them in the chat for you to copy.
+
+---
 
 ## License
 
