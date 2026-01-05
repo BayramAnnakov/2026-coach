@@ -24,22 +24,27 @@ Why they work:
 
 ## Installation
 
-### Option A: Claude Code (Recommended)
+### Option A: Claude Code (Easiest)
 
-If you have [Claude Code](https://claude.ai/code) installed, run this in your terminal:
+Just tell Claude Code to install the skill:
 
-```bash
-git clone https://github.com/BayramAnnakov/2026-coach ~/.claude/skills/2026-coach
+```
+Install the skill from https://github.com/BayramAnnakov/2026-coach
 ```
 
-Then use the skill:
+Claude Code will handle the git clone automatically. Then use:
 ```
 /2026-coach
 ```
 
-### Option B: Claude Desktop / Claude.ai (No Installation Needed)
+**Alternative - manual install:**
+```bash
+git clone https://github.com/BayramAnnakov/2026-coach ~/.claude/skills/2026-coach
+```
 
-**You don't need to install anything!** Just copy-paste this prompt into Claude:
+### Option B: Claude.ai / Claude Desktop (No Installation)
+
+**You don't need to install anything!** Just copy-paste this prompt:
 
 ```
 Please act as my executive coach and help me plan my 2026 using the process goals methodology.
@@ -61,20 +66,34 @@ At the end, create these files for me:
 - WEEK_01.md - first week's process goals with checkboxes
 ```
 
-### Option C: Manual Download (Any Platform)
+### Option C: VS Code / GitHub Copilot
+
+Copy the skill to your project's skills folder:
+
+```bash
+# Recommended location (VS Code / Copilot)
+git clone https://github.com/BayramAnnakov/2026-coach .github/skills/2026-coach
+
+# Or legacy location (also supported)
+git clone https://github.com/BayramAnnakov/2026-coach .claude/skills/2026-coach
+```
+
+### Option D: Manual Download
 
 1. Go to https://github.com/BayramAnnakov/2026-coach
-2. Click the green **"Code"** button
-3. Click **"Download ZIP"**
-4. Unzip the folder
-5. Move the `2026-coach` folder to `~/.claude/skills/` (create this folder if it doesn't exist)
+2. Click the green **"Code"** button → **"Download ZIP"**
+3. Unzip and move the folder to one of these locations:
 
-**Where is ~/.claude/skills/?**
-- **Mac:** `/Users/YOUR_USERNAME/.claude/skills/`
-- **Windows:** `C:\Users\YOUR_USERNAME\.claude\skills\`
-- **Linux:** `/home/YOUR_USERNAME/.claude/skills/`
+| Platform | Location |
+|----------|----------|
+| Claude Code (personal) | `~/.claude/skills/2026-coach/` |
+| Claude Code (project) | `.claude/skills/2026-coach/` |
+| VS Code / Copilot | `.github/skills/2026-coach/` |
 
-Note: The `.claude` folder may be hidden. On Mac, press `Cmd+Shift+.` in Finder to show hidden folders.
+**Finding hidden folders:**
+- **Mac:** Press `Cmd+Shift+.` in Finder
+- **Windows:** View → Show → Hidden items
+- **Linux:** Press `Ctrl+H` in file manager
 
 ---
 
@@ -112,14 +131,16 @@ Transforms outcomes into controllable behaviors:
 
 ---
 
-## Environment Compatibility
+## Compatibility
 
-| Environment | How to Use |
-|-------------|------------|
-| **Claude Code** | Run `/2026-coach` after installation |
-| **Claude Desktop** | Use the prompt from Option B above |
-| **Claude.ai (web)** | Use the prompt from Option B above |
-| **Other AI assistants** | Copy SKILL.md contents as a system prompt |
+| Platform | How to Use | Install Required? |
+|----------|------------|-------------------|
+| **Claude Code** | `/2026-coach` | Yes (Option A) |
+| **Claude Desktop** | Paste prompt | No (Option B) |
+| **Claude.ai (web)** | Paste prompt | No (Option B) |
+| **VS Code + Copilot** | Auto-discovered | Yes (Option C) |
+| **Cursor** | Auto-discovered | Yes (Option C) |
+| **ChatGPT / other AI** | Paste prompt | No (Option B) |
 
 ---
 
@@ -147,16 +168,19 @@ For tracking your process goals:
 ## FAQ
 
 **Q: Do I need to know how to code?**
-A: No! Use Option B (just copy-paste the prompt) or Option C (download ZIP).
+A: No! Use Option B (just copy-paste the prompt) - works instantly.
 
 **Q: Does this work with ChatGPT?**
-A: Yes! Copy the prompt from Option B into ChatGPT. It works with any AI assistant.
+A: Yes! Copy the prompt from Option B. It works with any AI assistant.
 
-**Q: What if I don't have Claude Code?**
-A: Use Option B - no installation needed, just paste the prompt into claude.ai.
+**Q: What if Claude Code can't clone the repo?**
+A: Use Option D (manual download) or paste the prompt from Option B.
 
 **Q: Where do my plan files get saved?**
-A: The AI will create them wherever you specify, or show them in the chat for you to copy.
+A: The AI will ask you where to save them, or display them in chat for you to copy.
+
+**Q: How do I update the skill?**
+A: Run `git pull` in the skill folder, or re-download and replace the files.
 
 ---
 
@@ -171,3 +195,11 @@ MIT
 ---
 
 *Perfect timing: It's January 2026 - everyone is goal-setting. Don't wait for "when you have time."*
+
+---
+
+## Sources
+
+- [Agent Skills Specification](https://agentskills.io/specification)
+- [Claude Code Skills Docs](https://code.claude.com/docs/en/skills)
+- [VS Code Agent Skills](https://code.visualstudio.com/docs/copilot/customization/agent-skills)
